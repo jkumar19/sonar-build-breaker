@@ -1,0 +1,27 @@
+on: [push]
+jobs:
+  SonarBuildBreaker:
+    runs-on: ubuntu-latest
+    name: SonarBuildBreaker
+    steps:
+      - name: Workflow Pre-Trigger Email Alert
+        uses: AlexisMateo/sendmail-action@5
+        with:
+          smtp-server: ${{ secrets.SMTP_SERVER }}
+          smtp-server-port: ${{ secrets.SMTP_SERVER_PORT }}
+          auth-user: ${{ secrets.AUTH_USER }}
+          auth-password: ${{secrets.EMAIL_PASSWORD }}
+          subject: "GitHub Workflow Status"
+          body: ${{github.context.payload}}
+          from: "jaswinder.kumar5858@gmail.com"
+          to: "${{ secrets.RECEIVE_EMAIL }}"
+      - name: Code Checkout
+        uses: actions/checkout@v2
+      - name: Sonar Build Breaker
+        uses: ./ 
+        id: buildbreaker
+        with:
+          sonar_url: 'https://sonarcloud.io'
+          sonar_branch: 'main'
+          sonar_token: ${{ secrets.SONAR_TOKEN }}
+          project_key: 'sonar_test_github_project'

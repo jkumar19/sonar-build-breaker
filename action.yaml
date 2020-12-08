@@ -1,0 +1,32 @@
+# action.yml
+name: 'Sonar Build Breaker'
+description: 'this GitHub action is used to break the build if analysis failed'
+branding:
+  icon: check
+  color: blue
+inputs:
+  project_key:
+    description: 'pass sonar project key'
+    required: true
+  sonar_token:
+    description: 'pass sonar token'
+    required: true
+  sonar_url:
+    description: 'pass sonar root url'
+    required: true
+  sonar_branch:
+    description: 'pass sonar branch name'
+    required: true
+outputs:
+  analysis_id:
+    description: 'sonar quality gate scan id'
+  status:
+    description: 'sonar quality gate status'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - --sonar-url=${{ inputs.sonar_url }}
+    - --sonar-token=${{ inputs.sonar_token }}
+    - --project-key=${{ inputs.project_key }}
+    - --branch=${{ inputs.sonar_branch }}

@@ -1,0 +1,11 @@
+# sonar-quality-gates
+
+This GitHub action is used to fail the build in case QualityGates failed. This GitHub action expect the following required parametes:
+
+sonar_url: SonarCloud or SonarQube URL
+sonar_token: SonarCloud or SonarQube API token
+branch: Branch which want to scan
+project_key: SonarCloud or SonarQube project key
+
+Sample Code:
+
