@@ -3,7 +3,7 @@ FROM alpine:3.10
 RUN mkdir -p /apps/sonar \
     && apk add curl bash jq 
 
-COPY sonar-build-breaker.sh /apps/sonar/sonar-build-breaker.sh
+COPY SonarBuildBreaker.sh /apps/sonar/SonarBuildBreaker.sh
 
 WORKDIR /apps/sonar
 
