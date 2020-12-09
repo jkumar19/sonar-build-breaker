@@ -9,4 +9,4 @@ WORKDIR /apps/sonar
 
 RUN ls -ltr /apps/sonar
 
-ENTRYPOINT ["bash", "SonarBuildBreaker.sh"]
+ENTRYPOINT ["bash", "/apps/sonar/SonarBuildBreaker.sh"]
