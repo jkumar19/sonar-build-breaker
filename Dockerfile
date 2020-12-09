@@ -7,4 +7,4 @@ COPY SonarBuildBreaker.sh /apps/sonar/SonarBuildBreaker.sh
 
 WORKDIR /apps/sonar
 
-ENTRYPOINT ["sh", "SonarBuildBreaker.sh"]
+ENTRYPOINT ["bash", "SonarBuildBreaker.sh"]
