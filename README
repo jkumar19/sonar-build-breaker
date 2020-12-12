@@ -4,6 +4,7 @@
 
 This GitHub action is used to fail GitHub workflow in case Quality Gates failed. This GitHub action expect the following required parametes:
 
+|-------------|----------|
 | Parameters  | Required | 
 |-------------|----------|
 | sonar_url   |   yes    |
