@@ -1,4 +1,5 @@
 ![.github/workflows/main.yaml](https://github.com/DevOps575/sonar-build-breaker/workflows/.github/workflows/main.yaml/badge.svg)
+[[https://sonarcloud.io/dashboard/index/no.priv.bang.ukelonn%3Aparent][file:https://sonarcloud.io/api/badges/measure?key=no.priv.bang.ukelonn%3Aparent&metric=lines#.svg]]
 
 # Validating Sonar Analysis and Quality Gates
 
@@ -15,7 +16,7 @@ Sample Code Example:
 
 ```
 - name: Sonar Build Breaker
-  uses: ./ 
+  uses: DevOps575/sonar-build-breaker@v1.0.0
   with:
     sonar_url: "https://sonarcloud.io"
     sonar_branch: "main"
