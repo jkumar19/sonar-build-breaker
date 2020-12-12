@@ -4,14 +4,12 @@
 
 This GitHub action is used to fail GitHub workflow in case Quality Gates failed. This GitHub action expect the following required parametes:
 
-|--------------|----------|
 | Parameters   | Required | 
 |--------------|----------|
 | sonar_url    |   yes    |
 | sonar_token  |   yes    |
 | project_key  |   yes    |
 | sonar_branch |   yes    |
-|--------------|----------|
 
 Sample Code Example:
 
