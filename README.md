@@ -1,5 +1,4 @@
-![.github/workflows/main.yaml](https://github.com/DevOps575/sonar-build-breaker/workflows/.github/workflows/main.yaml/badge.svg)
-[[https://sonarcloud.io/dashboard/index/no.priv.bang.ukelonn%3Aparent][file:https://sonarcloud.io/api/badges/measure?key=no.priv.bang.ukelonn%3Aparent&metric=lines#.svg]]
+![.github/workflows/main.yaml](https://github.com/DevOps575/sonar-build-breaker/workflows/.github/workflows/main.yaml/badge.svg) [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=sonar_test_github_project)](https://sonarcloud.io/dashboard?id=sonar_test_github_project)
 
 # Validating Sonar Analysis and Quality Gates
 
