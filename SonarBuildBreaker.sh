@@ -21,7 +21,6 @@ function usage()
 function die()
 {
     local message=$1
-    echo -e $RED
     [ -z "$message" ] && message="Died"
     echo -e "$message at ${BASH_SOURCE[1]}:${FUNCNAME[1]} line ${BASH_LINENO[0]}." >&2
     exit 1
@@ -46,23 +45,6 @@ function sonarAnalysisStatus()
     echo "==> Sonar Analysis for branch $GIT_BRANCH and project $PROJECT_KEY passed"
 }
 
-#############################################
-##### function to check vulnerabilities #####
-#############################################
-function checkVulnerabilities()
-{
-    owasptop10="a1,a2,a3,a4,a5,a6,a7,a8,a9,a10"
-    severity="MAJOR,BLOCKER,CRITICAL"
-    totalVul=$(curl -s "$SONAR_URL/api/issues/search?componentKeys=$PROJECT_KEY&types=VULNERABILITY&owaspTop10=$owasptop10&resolved=false&severities=$severity" | jq '.total')
-    if [ $totalVul -gt 0 ]; then
-       echo "Total Vulnerability: $totalVul"
-       echo "-------------------------------------------------------------------------------------------------------"
-       echo "Status     Tags         Severity   Component"
-       echo "-------------------------------------------------------------------------------------------------------"
-       curl -s "$SONAR_URL/api/issues/search?componentKeys=$PROJECT_KEY&branch=$GIT_BRANCH&types=VULNERABILITY&owaspTop10=$owasptop10&resolved=false&severities=$severity" | jq '.issues[] | "\(.status)    \(.tags)    \(.severity)    \(.component)"' | tr -d '[\"' | tr -d '\"]' | tr -d '\'
-       die "ERROR => found major, critical or blocker vulnerabilities for project $PROJECT_KEY and branch $GIT_BRANCH, exiting..."
-    fi
-}
 for i in "$@"; do                                                  
 case $i in                 
   --sonar-url=*)                                                
@@ -96,4 +78,3 @@ done
 [ -z "$GIT_BRANCH" ] && die "pass GIT_BRANCH with --branch=<GIT_BRANCH> switch, exiting..."
                                                                                    
 sonarAnalysisStatus
-checkVulnerabilities
