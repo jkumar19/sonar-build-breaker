@@ -15,7 +15,7 @@ Sample Code Example:
 
 ```
 - name: Sonar Build Breaker
-  uses: DevOps575/sonar-build-breaker@v1.0.0
+  uses: jkumar19/sonar-build-breaker@v1.0.0
   with:
     sonar_url: "https://sonarcloud.io"
     sonar_branch: "main"
