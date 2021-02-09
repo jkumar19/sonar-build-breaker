@@ -1,4 +1,4 @@
-![.github/workflows/main.yaml](https://github.com/DevOps575/sonar-build-breaker/workflows/.github/workflows/main.yaml/badge.svg) [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=sonar_test_github_project)](https://sonarcloud.io/dashboard?id=sonar_test_github_project)
+![.github/workflows/main.yaml](https://github.com/DevOps575/sonar-build-breaker/workflows/.github/workflows/main.yaml/badge.svg) [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=sonar_test_github_project)](https://sonarcloud.io/dashboard?id=sonar_test_github_project) [![Known Vulnerabilities](https://snyk.io/test/github/jkumar19/sonar-build-breaker/badge.svg?targetFile=Dockerfile)](https://snyk.io/test/github/jkumar19/sonar-build-breaker?targetFile=Dockerfile)
 
 # Validating Sonar Analysis and Quality Gates
 
