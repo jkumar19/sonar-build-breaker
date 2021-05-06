@@ -1,6 +1,6 @@
 ![.github/workflows/main.yaml](https://github.com/DevOps575/sonar-build-breaker/workflows/.github/workflows/main.yaml/badge.svg)
 
-# Validating Sonar Analysis and Quality Gates
+# Validating Sonar Analysis and Quality Gates.  
 
 This GitHub action is used to fail GitHub workflow in case Quality Gates failed. This GitHub action expect the following required parametes:
 
