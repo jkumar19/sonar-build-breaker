@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM alpine:latest
 
 RUN mkdir -p /apps/sonar \
     && apk add curl bash jq 
